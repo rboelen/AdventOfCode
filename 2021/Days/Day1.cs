@@ -7,14 +7,17 @@ namespace Days
     {
         public override object ExecutePart1()
         {
-            return SolvePart1(Input);
+            return SolvePartsLinq(Input,1);
         }
 
         public override object ExecutePart2()
         {
-            return SolvePart2(Input);
+            return SolvePartsLinq(Input, 3);
         }
 
+        /// <summary>
+        /// Initial solution 
+        /// </summary>
         public int SolvePart1(int[] input)
         {
             int count = 0;
@@ -30,6 +33,9 @@ namespace Days
             return count;
         }
 
+        /// <summary>
+        /// Initial solution 
+        /// </summary>
         public int SolvePart2(int[] input)
         {
             int count = 0;
@@ -44,6 +50,21 @@ namespace Days
             }
 
             return count;
+        }
+
+        /// <summary>
+        /// Best solution after investigating Reddit
+        /// </summary>
+        public int SolvePartsLinq(int[] depths, int windowSize)
+        {
+            if (depths == null || depths.Length < 2)
+            {
+                return 0;
+            }
+
+            return depths
+               .Where((d, i) => i >= windowSize && d > depths[i - windowSize])
+               .Count();
         }
     }
 }
