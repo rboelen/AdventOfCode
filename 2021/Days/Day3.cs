@@ -34,19 +34,14 @@ namespace Days
 
             var oxSamples = Input;
             var co2Samples = Input;
-            var ox = 0;
-            var co2 = 0;
 
             for (int pos = 0; pos < Input[0].Length; pos++)
             {
                 oxSamples = FilterSamples(oxSamples, pos, true);
-                ox = Convert.ToInt32(oxSamples[0], 2);
-
                 co2Samples = FilterSamples(co2Samples, pos, false);
-                co2 = Convert.ToInt32(co2Samples[0], 2);
             }
 
-            return ox * co2;
+            return Convert.ToInt32(oxSamples[0], 2) * Convert.ToInt32(co2Samples[0], 2);
         }
 
         private static char CalcMostCommon(string[] samples, int pos)
