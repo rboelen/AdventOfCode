@@ -6,17 +6,17 @@ namespace Days.Tests;
 public class Day3Tests
 {
     [Test]
-    public void Part1_Sample_Success()
+    public void Part1_Simple_Success()
     {
         // arrange
-        var input = new string[] {  };
-        var target = new Day2 {  Input = input};
+        var input = new string[] { "00100", "11110" , "10110" , "10111" , "10101", "01111", "00111", "11100", "10000", "11001", "00010" , "01010" };
+        var target = new Day3 { Input = input };
 
         // act
         var result = target.ExecutePart1();
 
         // assert
-        result.Should().Be(0);
+        result.Should().Be(198);
     }
 
     [Test]
@@ -50,14 +50,14 @@ public class Day3Tests
     public void Part2_Sample_Success()
     {
         // arrange
-        var input = new string[] { };
-        var target = new Day2 { Input = input };
+        var input = new string[] { "00100", "11110", "10110", "10111", "10101", "01111", "00111", "11100", "10000", "11001", "00010", "01010" };
+        var target = new Day3 { Input = input };
 
         // act
         var result = target.ExecutePart2();
 
         // assert
-        result.Should().Be(0);
+        result.Should().Be(230);
     }
 
     [Test]
