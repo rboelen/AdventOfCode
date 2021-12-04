@@ -68,7 +68,8 @@ namespace Days
             var boards = new List<Board>();
 
             var lines = Input.Skip(1).Where(x => !string.IsNullOrWhiteSpace(x))
-              .Select(s => s.Replace("  ", " ").Split(' ').Where(x => !string.IsNullOrEmpty(x)).Select(n => Convert.ToInt32(n)).ToArray());
+                .Select(s => s.Split(new char[0], options: StringSplitOptions.RemoveEmptyEntries)
+                .Select(n => Convert.ToInt32(n)).ToArray());
 
             var id = 0;
             var boardRows = lines.Skip(id * 5).Take(5);
