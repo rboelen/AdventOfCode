@@ -24,18 +24,20 @@ namespace Days
 
                 if (deltay == 0)
                 {
-                    for (int d = 0; d <= deltax; d++)
+                    var range = signx < 0 ? Enumerable.Range(x2, deltax+1) : Enumerable.Range(x1, deltax+1);
+                    foreach (var d in range)
                     {
-                        grid[x1 + (signx * d), y1] += 1;
-                        count += grid[x1 + (signx * d), y1] == 2 ? 1 : 0;
+                        grid[d, y1] += 1;
+                        count += grid[d, y1] == 2 ? 1 : 0;
                     }
                 }
                 else if (deltax == 0)
                 {
-                    for (int d = 0; d <= deltay; d++)
+                    var range = signy < 0 ? Enumerable.Range(y2, deltay + 1) : Enumerable.Range(y1, deltay + 1);
+                    foreach (var d in range)
                     {
-                        grid[x1, y1 + (signy * d)] += 1;
-                        count += grid[x1, y1 + (signy * d)] == 2 ? 1 : 0;
+                        grid[x1, d] += 1;
+                        count += grid[x1, d] == 2 ? 1 : 0;
                     }
                 }
             }
