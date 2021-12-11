@@ -12,8 +12,7 @@ namespace Days
             var close = new[] { '}', ')', ']', '>' }.ToList();
             var points = new[] { 1197, 3, 57, 25137 };
             var sum = 0;
-            var sample = new[] { "{([(<{}[<>[]}>{[]{[(<()>" };
-           // Input = sample;
+
             foreach (var line in Input)
             {
                 var stack = new Stack<char>();
@@ -47,15 +46,6 @@ namespace Days
             var close = new[] { '}', ')', ']', '>' }.ToList();
             var points = new[] { 3,1, 2, 4 };
       
-            var sample = new[] {
-
-                "[({(<(())[]>[[{[]{<()<>>",
-                "[(()[<>])]({[<{<<[]>>(",
-                "(((({<>}<{<{<>}{[]{[]{}",
-                "{<[[]]>}<{[{[{[]{()[[[]",
-                "<{([{{}}[<[[[<>{}]]]>[]]"
-            };
-            //Input = sample;
             var scores = new List<double>();
 
             foreach (var line in Input.Where(x => !IsCorrupt(open, close, x)))

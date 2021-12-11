@@ -30,7 +30,7 @@ namespace Days
         private int Solve2()
         {
             var search = new[] { 2, 4, 3, 7 };
-         //   var samples = new[] { "acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf" };
+
             var lines = Input.Select(x => {
                 var p = x.Split(" | ");
                 return new
@@ -98,14 +98,7 @@ namespace Days
                     switch (l)
                     {
                         case 5:
-                            // can be 2 or 3, 5 
-                            //if len(set(d).difference(mapn.get(4))) == 3:
-                            //    mapn.update({ 2: set(d) })  #! 2
-                            //else:
-                            //    if set(d).issuperset(mapn.get(1)):
-                            //        mapn.update({ 3: set(d) })  #! 3
-                            //    else: 
-                            //        mapn.update({ 5: set(d) }) #! 5
+
                             var diff1 = line.Input[i].Except(line.Decoded[4]).Count();
                             if (diff1 == 3)
                             {
@@ -127,8 +120,7 @@ namespace Days
                 }
 
                 sum += Convert.ToInt32(string.Join("", line.Output.Select(x => Find(line.Decoded.ToList(), x)).ToList()));
-               // var add = Convert.ToInt32(string.Join("", line.Output.Select(x => line.Decoded[Find(line.Input,x)].ToString())));
-               // sum += add;
+
                
             }
 

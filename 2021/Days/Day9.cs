@@ -14,12 +14,6 @@ namespace Days
 
         public override object ExecutePart1()
         {
-            var sample = new string[] {
-            "2199943210","3987894921","9856789892","8767896789","9899965678"
-            };
-
-           // Input = sample;
-
             maxY = Input.Length;
             maxX = Input[0].Length;
 
@@ -68,12 +62,6 @@ namespace Days
 
         public override object ExecutePart2()
         {
-            var sample = new string[] {
-            "2199943210","3987894921","9856789892","8767896789","9899965678"
-            };
-
-           // Input = sample;
-
             maxY = Input.Length;
             maxX = Input[0].Length;
 
