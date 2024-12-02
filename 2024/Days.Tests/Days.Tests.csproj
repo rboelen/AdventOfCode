@@ -22,11 +22,11 @@
     <ProjectReference Include="..\Days\Days.csproj" />
   </ItemGroup>
 
-	<ItemGroup>
-		<ContentWithTargetPath Include="Resources\*.*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<TargetPath>\Resources\%(Filename)%(Extension)</TargetPath>
-		</ContentWithTargetPath>
-	</ItemGroup>
+  <ItemGroup>
+	<ContentWithTargetPath Include="Resources\*.*">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<TargetPath>\Resources\%(Filename)%(Extension)</TargetPath>
+	</ContentWithTargetPath>
+  </ItemGroup>
 
 </Project>
