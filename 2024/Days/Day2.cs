@@ -34,14 +34,9 @@ internal class Day2 : Day<int[][]>
         for (int i = 0; i < input.Length; i++)
         {
             var safe = true;
-            var dir = 0;
+            var dir = CalcDir(input[i][0], input[i][1]);
             for (int j = 0; j < input[i].Length - 1; j++)
             {
-                if (dir == 0)
-                {
-                    dir = CalcDir(input[i][j], input[i][j + 1]);
-                }
-
                 safe = CheckIsSafe(dir, input[i][j], input[i][j + 1]);
 
                 if ((!safe))
@@ -79,7 +74,6 @@ internal class Day2 : Day<int[][]>
                 if ((!safe))
                 {
                     unsafeItems.Add(input[i]);
-
                     break;
                 }
             }
@@ -89,10 +83,13 @@ internal class Day2 : Day<int[][]>
             }
         }
 
+
+        // don't like the double loop here
         for (int i = 0; i < unsafeItems.Count; i++)
         {
             var skip = 0;
 
+            // don't like checking all items again
             while (skip < unsafeItems[i].Length)
             {
                 var safe = true;
@@ -100,9 +97,7 @@ internal class Day2 : Day<int[][]>
                 var dir = CalcDir(items[0], items[1]);
                 for (int j = 0; j < items.Length - 1; j++)
                 {
-
                     safe = CheckIsSafe(dir, items[j], items[j + 1]);
-
                     if ((!safe))
                     {
                         break;

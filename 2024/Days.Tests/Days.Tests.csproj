@@ -29,16 +29,4 @@
 		</ContentWithTargetPath>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ContentWithTargetPath Remove="Resources\day2-unsafe.txt" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\day2-unsafe.txt" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Content Include="Resources\day2-unsafe.txt" />
-	</ItemGroup>
-
 </Project>
